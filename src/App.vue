@@ -1,19 +1,19 @@
 <script>
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFouter from "./components/AppFouter.vue";
+
 export default {
-  data() {
-    return {
-      title: "Ciao",
-    };
-  },
+  components: { AppHeader, AppMain, AppFouter },
 };
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
+  <AppHeader />
+  <AppMain />
+  <AppFouter />
 </template>
 
 <style lang="scss">
-h1 {
-  color: red;
-}
+@use "./style/general.scss" as *;
 </style>
