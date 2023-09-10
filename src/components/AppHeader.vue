@@ -2,7 +2,18 @@
 export default {
   data() {
     return {
-      title: "Ciao",
+      pages: [
+        "CHARACTERS",
+        "COMICS",
+        "MOVIES",
+        "TV",
+        "GAMES",
+        "COLLECTIBLES",
+        "VIDEOS",
+        "FANS",
+        "NEWS",
+        "SHOP",
+      ],
     };
   },
 };
@@ -16,16 +27,20 @@ export default {
       </div>
       <div>
         <ul>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>Ciao</li>
-          <li>miao</li>
+          <li v-for="page in pages">
+            <p>
+              <a href="#">{{ page }}</a>
+            </p>
+          </li>
+          <!-- <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">Ciao</a></li>
+          <li><a href="#">miao</a></li> -->
         </ul>
       </div>
     </div>
