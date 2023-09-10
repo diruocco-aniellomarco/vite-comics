@@ -2,8 +2,88 @@
 export default {
   data() {
     return {
-      title: "Ciao",
+      buy: [
+        {
+          text: "DIGITAL COMICS",
+          image: "buy-comics-digital-comics.png",
+        },
+        {
+          text: "DC MERCHANDISE",
+          image: "buy-comics-merchandise.png",
+        },
+        {
+          text: "SUBCRIPTION",
+          image: "buy-comics-subscriptions.png",
+        },
+        {
+          text: "COMICS SHOP LOCATOR",
+          image: "buy-comics-shop-locator.png",
+        },
+        {
+          text: "DC POWER VISA",
+          image: "buy-dc-power-visa.svg",
+        },
+      ],
+      navList: [
+        {
+          title: "DC COMICS",
+          listLink: [
+            "Characters",
+            "Comics",
+            "Movies",
+            "TV",
+            "Games",
+            "Videos",
+            "News",
+          ],
+        },
+        {
+          title: "SHOP",
+          listLink: ["Shop DC", "Shop DC Collectibles"],
+        },
+        {
+          title: "DC",
+          listLink: [
+            "Terms Of Use",
+            "Privacy policy (New)",
+            "Ad Choises",
+            "Advertising",
+            "Jobs",
+            "Subscriptions",
+            "Talent Workshops",
+            "CPSC Certificates",
+            "Ratings",
+            "Shop Help",
+            "Contact Us",
+          ],
+        },
+        {
+          title: "SITES",
+          listLink: [
+            "DC",
+            "MAD magazine",
+            "DC Kids",
+            "DC Universe",
+            "DC Pover Visa",
+          ],
+        },
+      ],
+      social: [
+        "footer-facebook.png",
+        "footer-twitter.png",
+        "footer-youtube.png",
+        "footer-pinterest.png",
+        "footer-periscope.png",
+      ],
     };
+  },
+
+  methods: {
+    imageGenerate(imageName) {
+      const imageUrl = new URL("../assets/img/" + imageName, import.meta.url);
+
+      return imageUrl.href;
+    },
   },
 };
 </script>
@@ -13,75 +93,134 @@ export default {
     <section class="buy-container">
       <div class="container">
         <ul>
-          <li>
-            <img src="../assets/img/buy-dc-power-visa.svg" alt="icona" />
-            <p>DIGITAL COMICS</p>
+          <li v-for="buyItem in buy">
+            <img :src="imageGenerate(buyItem.image)" alt="{{ buyItem.text }}" />
+            <p>{{ buyItem.text }}</p>
           </li>
 
+          <!-- Base di partenza
           <li>
             <img src="../assets/img/buy-dc-power-visa.svg" alt="icona" />
             <p>DIGITAL COMICS</p>
-          </li>
-
-          <li>
-            <img src="../assets/img/buy-dc-power-visa.svg" alt="icona" />
-            <p>DIGITAL COMICS</p>
-          </li>
-
-          <li>
-            <img src="../assets/img/buy-dc-power-visa.svg" alt="icona" />
-            <p>DIGITAL COMICS</p>
-          </li>
-
-          <li>
-            <img src="../assets/img/buy-dc-power-visa.svg" alt="icona" />
-            <p>DIGITAL COMICS</p>
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
     <section class="nav_container">
       <div class="container">
         <nav>
-          <h1>Dc comics</h1>
-          <ul>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-          </ul>
-          <h1>Dc comics</h1>
-          <ul>
-            <li><p>Characters</p></li>
-            <li><p>Shop DC collectible</p></li>
-          </ul>
-          <h1>Dc comics</h1>
-          <ul>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-          </ul>
-          <h1>Dc comics</h1>
-          <ul>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
-          </ul>
+          <div v-for="navListItem in navList">
+            <h1>{{ navListItem.title }}</h1>
+            <ul>
+              <li v-for="link in navListItem.listLink">
+                <p>
+                  <a href="#">{{ link }}</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- BASE DI PARTENZA
+          <div>
+            <h1>Dc comics</h1>
+            <ul>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h1>Dc comics</h1>
+            <ul>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Shop DC collectible</a></p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h1>Dc comics</h1>
+            <ul>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h1>Dc comics</h1>
+            <ul>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+              <li>
+                <p><a href="#">Characters</a></p>
+              </li>
+            </ul>
+          </div> -->
         </nav>
       </div>
     </section>
@@ -90,6 +229,10 @@ export default {
         <h3><a href="#">SIGN-UP NOW!</a></h3>
         <div class="social-icon">
           <h2>FOLLOW US</h2>
+          <a v-for="iconLink in social" href="#">
+            <img :src="imageGenerate(iconLink)" alt="{{iconLink}}" />
+          </a>
+          <!-- BASE DI PARTENZA
           <a href="#">
             <img src="../assets/img/footer-facebook.png" alt="" /> </a
           ><a href="#">
@@ -100,7 +243,7 @@ export default {
             <img src="../assets/img/footer-pinterest.png" alt="" /> </a
           ><a href="#">
             <img src="../assets/img/footer-periscope.png" alt="" />
-          </a>
+          </a> -->
         </div>
       </div>
     </section>
@@ -115,7 +258,7 @@ export default {
   line-height: 150px;
 
   img {
-    width: 50px;
+    height: 50px;
   }
 
   li {
