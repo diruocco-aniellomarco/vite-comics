@@ -43,8 +43,8 @@ export default {
     <section class="nav_container">
       <div class="container">
         <nav>
+          <h1>Dc comics</h1>
           <ul>
-            <li class="title-list"><h1>Dc comics</h1></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
@@ -53,15 +53,13 @@ export default {
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
           </ul>
-
+          <h1>Dc comics</h1>
           <ul>
-            <li class="title-list"><h1>Dc comics</h1></li>
             <li><p>Characters</p></li>
-            <li><p>Characters</p></li>
+            <li><p>Shop DC collectible</p></li>
           </ul>
-
+          <h1>Dc comics</h1>
           <ul>
-            <li class="title-list"><h1>Dc comics</h1></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
@@ -76,9 +74,8 @@ export default {
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
           </ul>
-
+          <h1>Dc comics</h1>
           <ul>
-            <li class="title-list"><h1>Dc comics</h1></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
             <li><p>Characters</p></li>
@@ -88,7 +85,25 @@ export default {
         </nav>
       </div>
     </section>
-    <section></section>
+    <section class="social-container">
+      <div class="container social">
+        <h3><a href="#">SIGN-UP NOW!</a></h3>
+        <div class="social-icon">
+          <h2>FOLLOW US</h2>
+          <a href="#">
+            <img src="../assets/img/footer-facebook.png" alt="" /> </a
+          ><a href="#">
+            <img src="../assets/img/footer-twitter.png" alt="" /> </a
+          ><a href="#">
+            <img src="../assets/img/footer-youtube.png" alt="" /> </a
+          ><a href="#">
+            <img src="../assets/img/footer-pinterest.png" alt="" /> </a
+          ><a href="#">
+            <img src="../assets/img/footer-periscope.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
   </footer>
 </template>
 
@@ -144,6 +159,31 @@ export default {
       p {
         font-size: small;
         color: gray;
+      }
+    }
+  }
+}
+
+.social-container {
+  background-color: #303030;
+  padding: 20px 0;
+  .social {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      color: white;
+      padding: 20px;
+      border: 2px solid #0282f9;
+    }
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+
+      h2 {
+        color: #0282f9;
       }
     }
   }
