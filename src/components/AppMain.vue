@@ -97,10 +97,12 @@ export default {
 <template>
   <main>
     <div class="container">
+      <div class="ticket"><h3>CURRENT SERIES</h3></div>
       <div class="card-container" v-for="comic in comics">
         <AppCard :thumb="comic.thumb" :series="comic.series" />
       </div>
     </div>
+    <button>LOAD MORE</button>
   </main>
 </template>
 
@@ -108,6 +110,7 @@ export default {
 main {
   background-color: #1c1c1c;
   color: white;
+  padding: 10px;
   // min-height: 150px;
 }
 .container {
@@ -115,10 +118,31 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   padding: 30px 0;
+
+  position: relative;
 }
 
 .card-container {
   width: 200px;
   height: 250px;
+}
+
+.ticket {
+  position: absolute;
+  top: -25px;
+}
+
+button,
+.ticket {
+  padding: 10px;
+  background-color: #0282f9;
+}
+
+button {
+  color: white;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
 }
 </style>
