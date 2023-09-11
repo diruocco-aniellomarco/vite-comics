@@ -99,7 +99,12 @@ export default {
     <div class="container">
       <div class="ticket"><h3>CURRENT SERIES</h3></div>
       <div class="card-container" v-for="comic in comics">
-        <AppCard :thumb="comic.thumb" :series="comic.series" />
+        <AppCard
+          :thumb="comic.thumb"
+          :series="comic.series"
+          :price="comic.price"
+          :type="comic.type"
+        />
       </div>
     </div>
     <button>LOAD MORE</button>
