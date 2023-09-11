@@ -56,4 +56,11 @@ li {
   height: 100px;
   line-height: 100px;
 }
+
+header::after {
+  content: "";
+  display: block;
+  height: 300px;
+  background-image: url("../assets/img/jumbotron.jpg");
+}
 </style>
